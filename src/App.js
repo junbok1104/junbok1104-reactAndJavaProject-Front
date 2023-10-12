@@ -1,11 +1,11 @@
 import './App.css';
-import Weatherapp from './weatherapp';
+import Registhub from './Registhub';
 
 function App() {
 
   return (
       <>
-          <Weatherapp/>
+          <Registhub/>
       </>
   )
 }
