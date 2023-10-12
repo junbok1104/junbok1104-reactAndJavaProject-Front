@@ -1,12 +1,11 @@
 import './App.css';
-import MyForm2 from './MyForm2';
+import Weatherapp from './weatherapp';
 
 function App() {
 
-
   return (
       <>
-          <MyForm2/>
+          <Weatherapp/>
       </>
   )
 }
