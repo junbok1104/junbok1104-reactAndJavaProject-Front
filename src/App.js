@@ -1,13 +1,12 @@
 import './App.css';
-import Registhub from './Registhub';
+import MuiUse from './MuiUse';
+
 
 function App() {
 
   return (
-      <>
-          <Registhub/>
-      </>
-  )
+      <MuiUse></MuiUse>
+  );
 }
 
 export default App;
