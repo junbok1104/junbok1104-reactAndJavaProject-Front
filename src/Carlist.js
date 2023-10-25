@@ -1,8 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
 import { SERVER_URL } from './constant';
-import { DataGrid, GridToolbarContainer, GridToolbarExport, gridClasses } from '@mui/x-data-grid';
-import { Snackbar} from '@mui/material';
+import { DataGrid, GridDeleteIcon, GridToolbarContainer, GridToolbarExport, gridClasses } from '@mui/x-data-grid';
+import { IconButton, Snackbar, Stack} from '@mui/material';
 import AddCar from './AddCar';
 import EditCar from './EditCar';
 
@@ -61,7 +61,7 @@ function Carlist() {
             headerName: '',
             sortable : false,
             filterable : false,
-            renderCell : row => <button onClick={() => onDelclick(row.id)}>Delete</button>
+            renderCell : row => <IconButton onClick={() => onDelclick(row.id)}><GridDeleteIcon color='error'/></IconButton>
         }
     ];
 
@@ -112,7 +112,9 @@ function Carlist() {
 
     return(
         <React.Fragment>
-            <AddCar addCar={addCar} />
+            <Stack mt={2} mb={2}>
+                <AddCar addCar={addCar} />
+            </Stack>
             <div style={{height:500, width: '100%'}}>
                 <DataGrid rows={cars} columns={columns}  getRowId={row => row._links.self.href} components={{Toolbar: CustomToolbar}}></DataGrid>
                 <Snackbar open={open} autoHideDuration={2000} onClose={() => setOpen(false)} message="Car deleted" />

@@ -1,4 +1,4 @@
-import { Dialog, DialogActions, DialogContent, DialogTitle } from "@mui/material";
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, IconButton, Stack, TextField } from "@mui/material";
 import { useState } from "react";
 
 function EditCar(props) {
@@ -44,23 +44,21 @@ function EditCar(props) {
 
     return (
         <div>
-            <button onClick={handleClickOpen}>Edit</button>
+            <IconButton onClick={handleClickOpen}>Edit</IconButton>
             <Dialog open={open} onClose={handleClose}>
                 <DialogTitle>Edit Car</DialogTitle>
                     <DialogContent>
-                        <input placeholder="Brand" name="brand" value={car.brand} onChange={handleChange}/>
-                        <br/>
-                        <input placeholder="Model" name="model" value={car.model} onChange={handleChange}/>
-                        <br/>
-                        <input placeholder="Color" name="color" value={car.color} onChange={handleChange}/>
-                        <br/>
-                        <input placeholder="Year" name="year" value={car.year} onChange={handleChange}/>
-                        <br/>
-                        <input placeholder="Price" name="price" value={car.price} onChange={handleChange}/>
+                    <Stack spacing={2} mt={1}>
+                        <TextField label="Brand" name="brand" autoFocus variant="standard" value={car.brand} onChange={handleChange}/>
+                        <TextField label="Model" name="model" autoFocus variant="standard" value={car.model} onChange={handleChange}/>
+                        <TextField label="Color" name="color" autoFocus variant="standard" value={car.color} onChange={handleChange}/>
+                        <TextField label="Year"  name="year"  autoFocus variant="standard" value={car.year}  onChange={handleChange}/>
+                        <TextField label="Price" name="price" autoFocus variant="standard" value={car.price} onChange={handleChange}/>
+                    </Stack>
                     </DialogContent>
                     <DialogActions>
-                        <button onClick={handleClose}>Cancel</button>
-                        <button onClick={handleSave}>Save</button>
+                        <Button onClick={handleClose}>Cancel</Button>
+                        <Button onClick={handleSave}>Save</Button>
                     </DialogActions>
             </Dialog>
         </div>
