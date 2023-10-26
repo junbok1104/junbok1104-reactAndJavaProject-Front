@@ -37,7 +37,7 @@ function AddCar(props) {
         <div>
             <Button variant="contained" onClick={handleClickOpen}>New Car</Button>
             <Dialog open={open} onClose={handleClose}>
-                <DialogTitle>Ner Car</DialogTitle>
+                <DialogTitle>New Car</DialogTitle>
                 <DialogContent>
                     <Stack spacing={2} mt={1}>
                         <TextField label="Brand" name="brand" autoFocus variant="standard" value={car.brand} onChange={handleChange}/>

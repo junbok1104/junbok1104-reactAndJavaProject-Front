@@ -48,5 +48,8 @@
   "description": "React와 Java를 이용한 초급 프로젝트 [Front Part]",
   "main": "index.js",
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "react-test-renderer": "^18.2.0"
+  }
 }
